@@ -5,7 +5,7 @@ url = "https://pokeapi.co/api/v2/pokemon/"
 params = {'limit': 100}
 
 pokeList = []
-for offset in range(0, 1025, 100):
+for offset in range(0, 1500, 100):
     params['offset'] = offset  # add new value to dict with `limit`
     response = requests.get(url, params=params)
 
@@ -17,8 +17,9 @@ for offset in range(0, 1025, 100):
         for item in data['results']:
             id = item['url'].split('/')[-2]
             pokeList.append([id, item['name']])
-            if id == '550':
-                print(pokeList)
+            if id == '800':
                 pokeList = []
 
 print(pokeList)
+
+
