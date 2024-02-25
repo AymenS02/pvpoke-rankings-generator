@@ -100,6 +100,7 @@ function App() {
                             }
                             filteredList.push(pokeList[j]);
                             break; // Break the inner loop if a match is found
+                            // currently making duplicates, must find out why?!?
                         }
                     }
                 }
