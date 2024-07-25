@@ -18,10 +18,28 @@ body {
 
 }
 
-.file {
+.title {
+    background-color: #ACA9BB;
     padding: 20px;
+
+}
+
+.file {
     background-color: #ACA9BB;
 }
+
+.link {
+    color: #ACA9BB;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #464362;
+    border-radius: 5px;
+}
+
+.link:hover {
+    background-color: #2d2b3c;
+}
+
 
 .card {
     display: flex;
@@ -30,7 +48,7 @@ body {
     flex-direction: column;
     gap: 10px;
     background-color: #ACA9BB;
-    width: 80%;
+    width: 60%;
     border: #464362 2px solid;
     box-shadow: #000 0px 0px 10px;
 }

@@ -111,7 +111,10 @@ function App() {
 
     return (
         <div className='grid'>
-            <input className="file" type="file" accept=".csv" onChange={handleFileUpload} />
+            <div className='title'>
+                <input className="file" type="file" accept=".csv" onChange={handleFileUpload} />
+                <a href="https://pvpoke.com/rankings/all/1500/overall/" className='link'>File Generator Website Here</a>
+            </div>
             {finalList.map((pokemon, index) => (
                 <div className="card" key={index}>
                     <img className="card-img"
