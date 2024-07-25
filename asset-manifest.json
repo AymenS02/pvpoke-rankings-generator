@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pvpoke-rankings-generator/static/css/main.4318f74e.css",
+    "main.js": "/pvpoke-rankings-generator/static/js/main.bcea2bba.js",
+    "index.html": "/pvpoke-rankings-generator/index.html",
+    "main.4318f74e.css.map": "/pvpoke-rankings-generator/static/css/main.4318f74e.css.map",
+    "main.bcea2bba.js.map": "/pvpoke-rankings-generator/static/js/main.bcea2bba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4318f74e.css",
+    "static/js/main.bcea2bba.js"
+  ]
+}
