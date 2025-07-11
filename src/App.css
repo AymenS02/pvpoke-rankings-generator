@@ -29,15 +29,17 @@ body {
 }
 
 .link {
-    color: #ACA9BB;
+    margin-left: 10px;
+    color: #000000;
     text-decoration: none;
     padding: 5px;
-    background-color: #464362;
+    background-color: #9286ff;
     border-radius: 5px;
+    border:#000 1px solid;
 }
 
 .link:hover {
-    background-color: #2d2b3c;
+    background-color: #7c7a8d;
 }
 
 
@@ -67,4 +69,13 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     padding-bottom: 10px;
+}
+
+.card-name-fallback {
+    height: 96px; /* Match your image height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
 }
