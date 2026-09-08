@@ -37,6 +37,7 @@ html {
 
 body {
   min-height: 100vh;
+
   font-family:
     "Inter",
     system-ui,
@@ -46,6 +47,7 @@ body {
     sans-serif;
 
   color: var(--text);
+
   background:
     radial-gradient(
       circle at top left,
@@ -89,11 +91,13 @@ label {
   position: relative;
 
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.15fr)
     minmax(300px, 0.85fr);
 
   align-items: center;
+
   gap: 64px;
 
   min-height: 430px;
@@ -103,7 +107,6 @@ label {
   overflow: hidden;
 
   border: 1px solid var(--border);
-
   border-radius: 32px;
 
   background:
@@ -116,7 +119,7 @@ label {
 
   box-shadow:
     0 30px 80px
-      rgba(0, 0, 0, 0.25);
+    rgba(0, 0, 0, 0.25);
 }
 
 .hero::after {
@@ -124,20 +127,16 @@ label {
 
   position: absolute;
 
+  top: -190px;
+  right: -180px;
+
   width: 400px;
   height: 400px;
 
-  right: -180px;
-  top: -190px;
-
   border-radius: 50%;
 
-  background: rgba(
-    146,
-    134,
-    255,
-    0.08
-  );
+  background:
+    rgba(146, 134, 255, 0.08);
 
   filter: blur(15px);
 }
@@ -217,7 +216,6 @@ label {
   padding: 0 20px;
 
   border: 1px solid transparent;
-
   border-radius: var(--radius-sm);
 
   cursor: pointer;
@@ -252,21 +250,13 @@ label {
 
   border-color: var(--border-strong);
 
-  background: rgba(
-    255,
-    255,
-    255,
-    0.04
-  );
+  background:
+    rgba(255, 255, 255, 0.04);
 }
 
 .button--secondary:hover {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.08
-  );
+  background:
+    rgba(255, 255, 255, 0.08);
 }
 
 .file-input {
@@ -318,7 +308,7 @@ label {
 
   box-shadow:
     0 0 0 5px
-      rgba(126, 226, 168, 0.09);
+    rgba(126, 226, 168, 0.09);
 }
 
 /* =========================================
@@ -342,18 +332,18 @@ label {
   height: 230px;
 
   border: 1px solid var(--border);
-
   border-radius: 24px;
 
   background: var(--surface-light);
 
   box-shadow:
     0 28px 45px
-      rgba(0, 0, 0, 0.25);
+    rgba(0, 0, 0, 0.25);
 
   font-size: 4rem;
 
-  transition: transform 250ms ease;
+  transition:
+    transform 250ms ease;
 }
 
 .preview-card span {
@@ -371,8 +361,8 @@ label {
 .preview-card--1 {
   z-index: 3;
 
-  left: 50%;
   top: 50%;
+  left: 50%;
 
   transform:
     translate(-50%, -50%)
@@ -382,8 +372,8 @@ label {
 .preview-card--2 {
   z-index: 2;
 
-  left: 12%;
   top: 24%;
+  left: 12%;
 
   transform: rotate(-10deg);
 }
@@ -391,8 +381,8 @@ label {
 .preview-card--3 {
   z-index: 1;
 
-  right: 8%;
   top: 24%;
+  right: 8%;
 
   transform: rotate(10deg);
 }
@@ -438,7 +428,6 @@ label {
   padding: 28px;
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
 
   background: var(--surface);
@@ -510,7 +499,6 @@ label {
   align-items: center;
 
   min-width: 270px;
-
   height: 46px;
 
   padding: 0 14px;
@@ -518,7 +506,6 @@ label {
   gap: 9px;
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-sm);
 
   background: var(--surface);
@@ -557,7 +544,6 @@ label {
   color: var(--text);
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-sm);
 
   background: var(--surface);
@@ -611,7 +597,6 @@ label {
   overflow: hidden;
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
 
   background: var(--surface);
@@ -633,23 +618,21 @@ label {
 
   box-shadow:
     0 16px 32px
-      rgba(0, 0, 0, 0.18);
+    rgba(0, 0, 0, 0.18);
 }
 
 .rank-badge {
   position: absolute;
+  z-index: 2;
 
   top: 14px;
   left: 14px;
-
-  z-index: 2;
 
   min-width: 44px;
 
   padding: 7px 9px;
 
   border: 1px solid var(--border);
-
   border-radius: 999px;
 
   color: var(--purple-light);
@@ -735,6 +718,69 @@ label {
   white-space: nowrap;
 }
 
+/* =========================================
+   CARDS WITHOUT IMAGES
+
+   On unmatched cards, .pokemon-info comes
+   directly after .rank-badge. This lets the
+   CSS identify no-image cards without needing
+   another JSX class.
+========================================= */
+
+.pokemon-card
+  > .rank-badge
+  + .pokemon-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  min-height: 290px;
+
+  padding: 64px 24px 28px;
+
+  border-top: 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(146, 134, 255, 0.14),
+      transparent 62%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      transparent
+    );
+}
+
+.pokemon-card
+  > .rank-badge
+  + .pokemon-info
+  h3 {
+  display: -webkit-box;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: var(--text);
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+  text-overflow: unset;
+  white-space: normal;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .status-tag,
 .fallback-tag {
   display: inline-flex;
@@ -783,7 +829,6 @@ label {
   color: var(--text-muted);
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
 
   background: var(--surface);
@@ -836,7 +881,6 @@ label {
   text-align: center;
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
 
   background: var(--surface);
@@ -854,9 +898,11 @@ label {
 
 @media (max-width: 900px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    padding: 46px 32px;
+    padding:
+      46px 32px;
   }
 
   .hero__preview {
@@ -890,7 +936,8 @@ label {
   .hero {
     min-height: auto;
 
-    padding: 38px 24px;
+    padding:
+      38px 24px;
 
     border-radius: 22px;
   }
@@ -908,7 +955,8 @@ label {
   }
 
   .instructions {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .filters {
@@ -947,14 +995,38 @@ label {
   .pokemon-info {
     padding: 14px;
   }
+
+  .pokemon-card
+    > .rank-badge
+    + .pokemon-info {
+    min-height: 290px;
+
+    padding:
+      58px 16px 20px;
+  }
+
+  .pokemon-card
+    > .rank-badge
+    + .pokemon-info
+    h3 {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 390px) {
   .pokemon-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .sprite-wrapper {
     height: 180px;
+  }
+
+  .pokemon-card
+    > .rank-badge
+    + .pokemon-info
+    h3 {
+    font-size: 1.05rem;
   }
 }
